@@ -3,18 +3,17 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Test your knowledge of the US states and their capitals.",
+          "summary": "Life in the UK",
           "examplePhrases": [
-            "Alexa, open States Quiz",
-            "Alexa, play States Quiz"
+            "Alexa, open Life in the UK",
+            "Alexa, play Life in the UK"
           ],
           "keywords": [
             "quiz",
-            "games",
-            "geography"
+            "games"
           ],
-          "name": "States Quiz",
-          "description": "Test your knowledge of the US states and their capitals.\n\nStates Quiz provides a fun way to keep your U.S. geography skills sharp.\n\nTo start, just say \"Alexa, launch States Quiz\" or \"Alexa, open States Quiz\" to start the game\".\n\nAt anytime, you can stop the game by saying \"Alexa, stop\""
+          "name": "Quizza",
+          "description": "Test your knowledge of life in the UK"
         }
       },
       "isAvailableWorldwide": true,
@@ -26,7 +25,7 @@
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "ask-custom-StatesQuiz"
+          "uri": "Quizza"
         }
       }
     },

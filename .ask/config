@@ -1,9 +1,33 @@
 {
   "deploy_settings": {
     "default": {
-      "skill_id": "",
+      "skill_id": "amzn1.ask.skill.3bafa9dc-216a-4c0d-b47e-763ae4696338",
       "was_cloned": false,
-      "merge": {}
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "2c82ff75bc42d1ec4b9c37bdcca9b021"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "a91d11c2cf2caf9daf2b692db4d69c57"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:225222905101:function:Quizza",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "Quizza",
+            "handler": "index.handler",
+            "revisionId": "c7e40e44-3970-4f86-a7e7-9c733f9c553a",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
     }
   }
 }
