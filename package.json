@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/learningtocode101/alexa_node_js_quiz#readme",
   "devDependencies": {
-    "alexa-skill-test-framework": "^1.2.4"
+    "alexa-skill-test-framework": "^1.2.4",
+    "mocha": "^6.0.0"
   }
 }
