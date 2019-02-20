@@ -13,6 +13,15 @@ Install and Setup [ASK CLI](https://developer.amazon.com/docs/smapi/quick-start-
 ```$ npm update -g ask-cli```
 2. Clone the repo  
 ```$ ask clone https://github.com/learningtocode101/alexa_node_js_quiz.git quiz_game```
+3. Install the dependencies
+```bash
+npm install alexa-skill-test-framework --save-dev
+npm install --global mocha
+```
+4. Run the tests 
+```bash
+mocha test/helloworld-tests.js
+```
 
 ## Contributors
 [Adam](https://github.com/rednblack99)  
