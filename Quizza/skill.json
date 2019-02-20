@@ -1,0 +1,34 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "regions": {},
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:225222905101:function:Quizza"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Quizza",
+          "summary": "Life in the UK",
+          "description": "Test your knowledge of life in the UK",
+          "examplePhrases": [
+            "Alexa, open Life in the UK",
+            "Alexa, play Life in the UK"
+          ],
+          "keywords": [
+            "quiz",
+            "games"
+          ]
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Include your testing instruction (if any) here",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": []
+    }
+  }
+}

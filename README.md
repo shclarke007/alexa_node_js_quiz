@@ -16,7 +16,7 @@ Install and Setup [ASK CLI](https://developer.amazon.com/docs/smapi/quick-start-
 
 ## Contributors
 [Adam](https://github.com/rednblack99)  
-[AnHui](https://github.com/anhuiyang)  
+[Hui-An](https://github.com/anhuiyang)  
 [Carol](https://github.com/CazaBelle)  
 [Rodrigue](https://github.com/Rodrigue-K)  
 [Shaneil](https://github.com/learningtocode101)  
