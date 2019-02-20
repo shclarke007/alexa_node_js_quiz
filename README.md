@@ -12,7 +12,7 @@ Install and Setup [ASK CLI](https://developer.amazon.com/docs/smapi/quick-start-
 1. Install latest version of the CLI  
 ```$ npm update -g ask-cli```
 2. Clone the repo  
-```$ ask clone --url https://github.com/learningtocode101/alexa_node_js_quiz.git --skill-name quiz_game```
+```$ ask clone https://github.com/learningtocode101/alexa_node_js_quiz.git quiz_game```
 
 ## Contributors
 [Adam](https://github.com/rednblack99)  
