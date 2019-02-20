@@ -2,9 +2,14 @@ language: node_js
 node_js:
   - "iojs"
   - "7"
-before_install:
-  - npm i -g npm@6.4.1
-  - npm ci
-cache: npm
+  install:
+- npm ci
+# keep the npm cache around to speed up installs
+cache:
+  directories:
+  - "$HOME/.npm"
 script:
   - npm test
+
+
+
