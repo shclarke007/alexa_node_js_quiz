@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "iojs"
+  - "7"
+before_install:
+  - npm i -g npm@6.4.1
+  - npm install --global mocha
+  - npm install alexa-skill-test-framework --save-dev
+
+script:
+  - npm test

@@ -1,0 +1,22 @@
+{
+  "name": "alexa_node_js_quiz",
+  "version": "1.0.0",
+  "description": "## Approach Team trello to track tasks during development: https://trello.com/b/XDMT3Gny/alexa-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learningtocode101/alexa_node_js_quiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/learningtocode101/alexa_node_js_quiz/issues"
+  },
+  "homepage": "https://github.com/learningtocode101/alexa_node_js_quiz#readme",
+  "devDependencies": {
+    "alexa-skill-test-framework": "^1.2.4"
+  }
+}
