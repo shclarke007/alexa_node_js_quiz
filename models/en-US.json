@@ -1,146 +1,146 @@
 {
-  "interactionModel": {
-      "languageModel": {
-          "invocationName": "quiz game",
-          "intents": [
-              {
-                  "name": "AMAZON.CancelIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.HelpIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.StopIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.NavigateHomeIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.YesIntent",
-                  "samples": []
-              },
-              {
-                  "name": "RulesIntent",
-                  "slots": [],
-                  "samples": [
-                      "how do I play",
-                      "what are the rules again",
-                      "rules"
-                  ]
-              },
-              {
-                  "name": "QuizIntent",
-                  "slots": [],
-                  "samples": [
-                      "start the quiz"
-                  ]
-              },
-              {
-                  "name": "ReadyIntent",
-                  "slots": [
-                      {
-                          "name": "yes",
-                          "type": "YesType"
-                      },
-                      {
-                          "name": "no",
-                          "type": "noType"
-                      }
-                  ],
-                  "samples": [
-                      "{no}",
-                      "{yes}"
-                  ]
-              },
-              {
-                  "name": "CityIntent",
-                  "slots": [
-                      {
-                          "name": "city",
-                          "type": "AMAZON.GB_CITY"
-                      },
-                      {
-                          "name": "month",
-                          "type": "AMAZON.Month"
-                      }
-                  ],
-                  "samples": [
-                      "{month}",
-                      "city of {city}",
-                      "is it {city}",
-                      "{city}",
-                      "It is {city}"
-                  ]
-              },
-              {
-                  "name": "AMAZON.StartOverIntent",
-                  "samples": [
-                      "start over",
-                      "play again"
-                  ]
-              }
-          ],
-          "types": [
-              {
-                  "name": "AMAZON.GB_CITY",
-                  "values": [
-                      {
-                          "name": {
-                              "value": "london city"
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "city of London"
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "london"
-                          }
-                      }
-                  ]
-              },
-              {
-                  "name": "ReadyType",
-                  "values": [
-                      {
-                          "name": {
-                              "value": "no"
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "yes"
-                          }
-                      }
-                  ]
-              },
-              {
-                  "name": "YesType",
-                  "values": [
-                      {
-                          "name": {
-                              "value": "yes"
-                          }
-                      }
-                  ]
-              },
-              {
-                  "name": "noType",
-                  "values": [
-                      {
-                          "name": {
-                              "value": "no"
-                          }
-                      }
-                  ]
-              }
-          ]
-      }
-  }
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "quizz world",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RulesIntent",
+                    "slots": [],
+                    "samples": [
+                        "how do I play",
+                        "what are the rules again",
+                        "rules"
+                    ]
+                },
+                {
+                    "name": "QuizIntent",
+                    "slots": [],
+                    "samples": [
+                        "start the quiz"
+                    ]
+                },
+                {
+                    "name": "ReadyIntent",
+                    "slots": [
+                        {
+                            "name": "yes",
+                            "type": "YesType"
+                        },
+                        {
+                            "name": "no",
+                            "type": "noType"
+                        }
+                    ],
+                    "samples": [
+                        "{no}",
+                        "{yes}"
+                    ]
+                },
+                {
+                    "name": "CityIntent",
+                    "slots": [
+                        {
+                            "name": "city",
+                            "type": "AMAZON.GB_CITY"
+                        },
+                        {
+                            "name": "month",
+                            "type": "AMAZON.Month"
+                        }
+                    ],
+                    "samples": [
+                        "{month}",
+                        "city of {city}",
+                        "is it {city}",
+                        "{city}",
+                        "It is {city}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StartOverIntent",
+                    "samples": [
+                        "start over",
+                        "play again"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "AMAZON.GB_CITY",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "london city"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "city of London"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "london"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ReadyType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "no"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "YesType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "yes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "noType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "no"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
