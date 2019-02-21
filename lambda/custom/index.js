@@ -1,4 +1,4 @@
-const Alexa = require('ask-sdk-core');
+const Alexa = require('ask-sdk-core')
 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
@@ -12,9 +12,9 @@ const LaunchRequestHandler = {
     .withShouldEndSession (false)
     .getResponse()
   },
-};
+}
 
-const StopIntentHandeler = {
+const StopIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
     && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent'
@@ -24,7 +24,7 @@ const StopIntentHandeler = {
     .speak('Goodbye')
     .getResponse()
   }
-};
+}
 
 const ReadyIntentHandler = {
   canHandle(handlerInput) {
@@ -52,14 +52,14 @@ const ReadyIntentHandler = {
       .getResponse()
   }
   },
-};
+}
 
-const skillBuilder = Alexa.SkillBuilders.custom();
+const skillBuilder = Alexa.SkillBuilders.custom()
 
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
     ReadyIntentHandler,
-    StopIntent_lambda
+    StopIntentHandler
   )
-.lambda();
+.lambda()
