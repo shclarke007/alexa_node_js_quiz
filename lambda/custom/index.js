@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core')
 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type == 'LaunchRequest'
+    return handlerInput.requestEnvelope.request.type === 'LaunchRequest'
     || handlerInput.requestEnvelope.request.type === 'IntentRequest'
     && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StartOverIntent'
   },
@@ -24,14 +24,14 @@ const ReadyIntentHandler = {
     const yesAnswer = slots['yes'].value
     const noAnswer = slots['no'].value
   
-  if (yesAnswer == 'yes') {
+  if (yesAnswer === 'yes') {
     var speechText = 'Ok, let\'s get started'
     return handlerInput.responseBuilder
       .speak(speechText)
       .withShouldEndSession (false)
       .getResponse()
     } 
-  if (noAnswer == 'no') {
+  if (noAnswer === 'no') {
     speechText = 'Well I don\'t have all day so hurry up.'
     return handlerInput.responseBuilder
       .speak(speechText)
