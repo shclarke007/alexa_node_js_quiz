@@ -1,7 +1,11 @@
 # Alexa Quiz Skill
 
+This project contains the code supporting the Quiz skill our team is building for Alexa.
+
 ## Approach
 Team trello to track tasks during development: https://trello.com/b/XDMT3Gny/alexa-app 
+
+Medium publication for tracking learning: https://medium.com/alexapedia
 
 ## How to use
 ### Pre-requisites
@@ -14,14 +18,11 @@ Install and Setup [ASK CLI](https://developer.amazon.com/docs/smapi/quick-start-
 2. Clone the repo  
 ```$ ask clone https://github.com/learningtocode101/alexa_node_js_quiz.git quiz_game```
 3. Install the dependencies
-```bash
-npm install alexa-skill-test-framework --save-dev
-npm install --global mocha
-```
+```$ npm install```
 4. Run the tests 
-```bash
-mocha test/helloworld-tests.js
-```
+```$ npm test```
+5. Run the linter
+```$ ./node_modules/.bin/eslint .```
 
 ## Contributors
 [Adam](https://github.com/rednblack99)  
@@ -30,3 +31,6 @@ mocha test/helloworld-tests.js
 [Rodrigue](https://github.com/Rodrigue-K)  
 [Shaneil](https://github.com/learningtocode101)  
 
+## How to Contribute
+
+If you would like to contribute, fork and clone this repo to your local machine. Make the suggested changes and submit a pull request.
