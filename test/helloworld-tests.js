@@ -24,4 +24,14 @@ describe("Quizza Skill", function () {
 			}
 		]);
 	});
+	describe("StopIntent", function () {
+		alexaTest.test([
+			{
+				request: alexaTest.getIntentRequest('AMAZON.StopIntent'),
+				says: "Goodbye", repromptsNothing: true, shouldEndSession: true
+			}
+		]);
+	});
 });
+
+
