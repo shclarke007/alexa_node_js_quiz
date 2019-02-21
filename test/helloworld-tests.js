@@ -28,7 +28,7 @@ describe('Quizza Skill', function () {
 		alexaTest.test([
 			{
 				request: alexaTest.getIntentRequest('AMAZON.StopIntent'),
-				says: "Goodbye", repromptsNothing: true, shouldEndSession: true
+				says: 'Goodbye', repromptsNothing: true, shouldEndSession: true
 			}
 		]);
 	});
