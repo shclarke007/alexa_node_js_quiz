@@ -17,12 +17,12 @@ Install and Setup [ASK CLI](https://developer.amazon.com/docs/smapi/quick-start-
 ```$ npm update -g ask-cli```
 2. Clone the repo  
 ```$ ask clone https://github.com/learningtocode101/alexa_node_js_quiz.git quiz_game```
-3. Install the dependencies
+3. Install the dependencies  
 ```$ npm install```
-4. Run the tests 
+4. Run the tests  
 ```$ npm test```
-5. Run the linter
-```$ ./node_modules/.bin/eslint .```
+5. Run the linter  
+```$ npm run lint```
 
 ## Contributors
 [Adam](https://github.com/rednblack99)  
