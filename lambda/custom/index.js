@@ -60,6 +60,14 @@ const StartQuizIntentHandler = {
     sessionAttributes.answer = currentAnswer
     sessionAttributes.score = 0 
    
+      // For testing purposes, force a number to be picked if the UNIT_TEST environment variable is set
+      if(process.env.NODE_ENV === 'test') {
+        sessionAttributes.question = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?';
+        sessionAttributes.answer = 'a';
+
+      }
+
+
     return handlerInput.responseBuilder
       .speak(`${currentQuestion} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
       .reprompt(currentQuestion)
@@ -102,6 +110,7 @@ const StopIntentHandler = {
 
 function determine_correct(answer_slot, session_attribute, handlerInput) {
     const sessionAttributes = handlerInput.attributesManager.getSessionAttributes()
+    
     if (answer_slot === session_attribute) {
         sessionAttributes.score ++
       return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01\'/> correct. One point has been added to your score. '
