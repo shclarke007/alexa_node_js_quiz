@@ -183,8 +183,8 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
     ReadyIntentHandler,
-    StartQuizIntentHandler,
     HelpIntentHandler,
+    StartQuizIntentHandler,
     AnswerIntentHandler,
     StopIntentHandler,
   )
