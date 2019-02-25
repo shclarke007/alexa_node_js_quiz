@@ -1,4 +1,3 @@
-// const { NODE_ENV } = process.env.TEST
 process.env.NODE_ENV = 'test'
 
 const assert = require('chai').assert;
@@ -9,7 +8,7 @@ const alexa = va.VirtualAlexa.Builder()
     .create();
     
     describe('Britains Got Trivia tests', function() {
-      it('My First Test', async () => {
+      it('can open launch intent', async () => {
         let result = await alexa.launch();
         assert.include(result.prompt(), 'Welcome to Quizza');
       });
@@ -82,13 +81,12 @@ const alexa = va.VirtualAlexa.Builder()
         assert.include(result.prompt(), "correct");
       })
 
-      it('ReadyIntent say yes', async () => {
-        let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
+      // it('ReadyIntent say yes', async () => {
+      //   let result = await alexa.launch();
+      //   assert.include(result.prompt(), 'Welcome to Quizza');
 
-        result = await alexa.utter('yes');
-        assert.include(result.prompt(), 'london');
-      })
-
+      //   result = await alexa.utter('yes');
+      //   assert.include(result.prompt(), 'london');
+      // })
 
     });
