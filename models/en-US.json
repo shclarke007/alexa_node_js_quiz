@@ -13,7 +13,12 @@
                 },
                 {
                     "name": "AMAZON.StopIntent",
-                    "samples": []
+                    "samples": [
+                        "stop game",
+                        "end game",
+                        "quit",
+                        "stop"
+                    ]
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
@@ -21,7 +26,9 @@
                 },
                 {
                     "name": "AMAZON.YesIntent",
-                    "samples": []
+                    "samples": [
+                        "yes"
+                    ]
                 },
                 {
                     "name": "RulesIntent",
@@ -36,6 +43,11 @@
                     "name": "QuizIntent",
                     "slots": [],
                     "samples": [
+                        "sure",
+                        "start",
+                        "hit me",
+                        "let's go",
+                        "start game",
                         "start the quiz"
                     ]
                 },
@@ -57,31 +69,91 @@
                     ]
                 },
                 {
-                    "name": "CityIntent",
-                    "slots": [
-                        {
-                            "name": "city",
-                            "type": "AMAZON.GB_CITY"
-                        },
-                        {
-                            "name": "month",
-                            "type": "AMAZON.Month"
-                        }
-                    ],
-                    "samples": [
-                        "{month}",
-                        "city of {city}",
-                        "is it {city}",
-                        "{city}",
-                        "It is {city}"
-                    ]
-                },
-                {
                     "name": "AMAZON.StartOverIntent",
                     "samples": [
                         "start over",
                         "play again"
                     ]
+                },
+                {
+                    "name": "AnswerIntent",
+                    "slots": [
+                        {
+                            "name": "month",
+                            "type": "AMAZON.Month"
+                        },
+                        {
+                            "name": "person",
+                            "type": "PersonType"
+                        },
+                        {
+                            "name": "country",
+                            "type": "UKCountryType"
+                        },
+                        {
+                            "name": "city",
+                            "type": "AMAZON.GB_CITY"
+                        },
+                        {
+                            "name": "flower",
+                            "type": "FlowerType"
+                        },
+                        {
+                            "name": "answer",
+                            "type": "CustomSlotType"
+                        }
+                    ],
+                    "samples": [
+                        "the answer is {answer}",
+                        "it's {answer}",
+                        "that is {answer}",
+                        "{answer}",
+                        "{flower}",
+                        "{city}",
+                        "{country}",
+                        "{person}",
+                        "{month}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
                 }
             ],
             "types": [
@@ -136,6 +208,91 @@
                         {
                             "name": {
                                 "value": "no"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "PersonType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "elizabeth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "philip"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "UKCountryType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "wales"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "scotland"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "northern ireland"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "england"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "FlowerType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Shamrock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Poppy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Rose"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CustomSlotType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "d"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "c"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "b"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "a"
                             }
                         }
                     ]

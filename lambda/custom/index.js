@@ -85,8 +85,6 @@ const AnswerIntentHandler = {
       .speak(speechText)
       .withShouldEndSession (false)
       .getResponse()
-      
-    
   },
 }
 
