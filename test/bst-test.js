@@ -32,7 +32,6 @@ const alexa = va.VirtualAlexa.Builder()
       it('Start Game', async () => {
         let result = await alexa.launch();
         assert.include(result.prompt(), 'Welcome to Quizza');
-
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
       })
@@ -43,8 +42,7 @@ const alexa = va.VirtualAlexa.Builder()
 
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
-
-        result = await alexa.utter("the answer is d")
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is wrong");
       })
 
@@ -52,31 +50,31 @@ const alexa = va.VirtualAlexa.Builder()
       it("Shows your score after 5 questions", async () => {
         let result = await alexa.launch();
         assert.include(result.prompt(), 'Welcome to Quizza');
-
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
-
-        result = await alexa.utter("the answer is d")
+        console.log('1st')
+        console.log(result)
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is wrong");
-
-        result = await alexa.utter("the answer is d")
+        console.log('2nd')
+        console.log(result)
+        result = await alexa.utter("the answer is c")
         assert.include(result.prompt(), "sorry, that is wrong");
-
-        result = await alexa.utter("the answer is d")
+        console.log('3rd')
+        console.log(result)
+        result = await alexa.utter("the answer is c")
         assert.include(result.prompt(), "sorry, that is wrong");
-
-        result = await alexa.utter("the answer is d")
+        console.log('4th')
+        console.log(result)
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "You scored 0");
-
       })
 
       it("Answer question correctly", async () => {
         let result = await alexa.launch();
         assert.include(result.prompt(), 'Welcome to Quizza');
-
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
-
         result = await alexa.utter("the answer is a")
         assert.include(result.prompt(), "correct");
       })
@@ -84,7 +82,6 @@ const alexa = va.VirtualAlexa.Builder()
       it('will handle unrecognized input', async () => {
         let result = await alexa.launch();
         assert.include(result.prompt(), 'Welcome to Quizza');
-
         result = await alexa.utter('chicken');
         assert.include(result.prompt(), 'I do not understand that command');
       })

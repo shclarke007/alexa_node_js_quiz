@@ -69,7 +69,7 @@ const StartQuizIntentHandler = {
     }
 
     return handlerInput.responseBuilder
-      .speak(`This is round ${sessionAttributes.current_round}. ${currentQuestion} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
+      .speak(`This is round ${sessionAttributes.current_round}. ${sessionAttributes.question} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
       .reprompt(currentQuestion)
       .withShouldEndSession (false)
       .getResponse()
@@ -146,9 +146,12 @@ function getNextQuestion(handlerInput) {
     sessionAttributes.question = currentQuestion
     var currentAnswer = currentQuestionObject.answer
     sessionAttributes.answer = currentAnswer
-   
+    if(process.env.NODE_ENV === 'test') {
+      sessionAttributes.question = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+      sessionAttributes.answer = 'a'
+    }
    if(sessionAttributes.allQuestions.length > 0) {
-    return `The next question is: ${currentQuestion}`
+    return `The next question is: ${sessionAttributes.question}`
    } else {
      if(sessionAttributes.current_round === sessionAttributes.total_rounds) {
       return `You scored ${sessionAttributes.score}. Thank you for playing`
