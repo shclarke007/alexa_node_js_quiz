@@ -1,5 +1,5 @@
 const Alexa = require('ask-sdk-core')
-const questions = require('./questions')
+const questions = require('./custom/questions')
 
 const welcomeMessage = 'Welcome to Quizza. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?'
 const goodbyeMessage = 'Goodbye. Thanks for playing.'
