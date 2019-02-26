@@ -18,10 +18,10 @@
             "alexaUsage": [
               "custom/default"
             ],
-            "arn": "arn:aws:lambda:us-east-1:225222905101:function:Quizza",
-            "awsRegion": "us-east-1",
+            "arn": "arn:aws:lambda:eu-west-1:225222905101:function:serverlessrepo-myFirstSki-alexaskillskitnodejsfact-117BO70W06CO5",
+            "awsRegion": "eu-west-1",
             "codeUri": "lambda/custom",
-            "functionName": "Quizza",
+            "functionName": "serverlessrepo-myFirstSki-alexaskillskitnodejsfact-117BO70W06CO5",
             "handler": "index.handler",
             "revisionId": "c7e40e44-3970-4f86-a7e7-9c733f9c553a",
             "runtime": "nodejs8.10"
