@@ -101,6 +101,6 @@ const alexa = va.VirtualAlexa.Builder()
         let result = await alexa.launch();
         assert.include(result.prompt(), 'Welcome to Quizza');
         result = await alexa.utter('start game');
-        assert.include(result.prompt(), 'first round');
+        assert.include(result.prompt(), 'round 1');
       })
     });

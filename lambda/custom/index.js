@@ -58,6 +58,8 @@ const StartQuizIntentHandler = {
     sessionAttributes.question = currentQuestion
     var currentAnswer = currentQuestionObject.answer
     sessionAttributes.answer = currentAnswer
+    sessionAttributes.total_rounds = 2
+    sessionAttributes.current_round = 1
     sessionAttributes.score = 0 
    
     // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
@@ -67,7 +69,7 @@ const StartQuizIntentHandler = {
     }
 
     return handlerInput.responseBuilder
-      .speak(`${currentQuestion} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
+      .speak(`This is round ${sessionAttributes.current_round}. ${currentQuestion} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
       .reprompt(currentQuestion)
       .withShouldEndSession (false)
       .getResponse()
@@ -148,8 +150,12 @@ function getNextQuestion(handlerInput) {
    if(sessionAttributes.allQuestions.length > 0) {
     return `The next question is: ${currentQuestion}`
    } else {
-    return `You scored ${sessionAttributes.score}. Thank you for playing`
-   }
+     if(sessionAttributes.current_round === sessionAttributes.total_rounds) {
+      return `You scored ${sessionAttributes.score}. Thank you for playing`
+     } else {
+     sessionAttributes.current_round ++
+     return `You scored ${sessionAttributes.score} in this round. On to round 2!`
+   }}
 }
 
 const ErrorHandler = {
