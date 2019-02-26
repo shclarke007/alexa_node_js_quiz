@@ -21,7 +21,7 @@ const LaunchRequestHandler = {
 }
 
 const ReadyIntentHandler = {
-  canHandle(handlerInput) {
+  canHandle(handlerInput) { 
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
       && handlerInput.requestEnvelope.request.intent.name === 'ReadyIntent'
   },
@@ -62,7 +62,7 @@ const StartQuizIntentHandler = {
    
       // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
       if(process.env.NODE_ENV === 'test') {
-        currentQuestion = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+       currentQuestion = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
         sessionAttributes.answer = 'a'
       }
 
@@ -71,7 +71,7 @@ const StartQuizIntentHandler = {
       .reprompt(currentQuestion)
       .withShouldEndSession (false)
       .getResponse()
-  },
+  }
 }
 
 const AnswerIntentHandler = {
