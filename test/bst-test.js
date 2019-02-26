@@ -81,12 +81,26 @@ const alexa = va.VirtualAlexa.Builder()
         assert.include(result.prompt(), "correct");
       })
 
-      // it('ReadyIntent say yes', async () => {
-      //   let result = await alexa.launch();
-      //   assert.include(result.prompt(), 'Welcome to Quizza');
+      it('will handle unrecognized input', async () => {
+        let result = await alexa.launch();
+        assert.include(result.prompt(), 'Welcome to Quizza');
 
-      //   result = await alexa.utter('yes');
-      //   assert.include(result.prompt(), 'london');
-      // })
+        result = await alexa.utter('chicken');
+        assert.include(result.prompt(), 'I do not understand that command');
+      })
 
+      it('will handle help', async () => {
+        let result = await alexa.launch();
+        assert.include(result.prompt(), 'Welcome to Quizza');
+        result = await alexa.utter('help');
+        assert.include(result.prompt(), 'Here are the rules.');
+      })
+
+
+      it('palyer can paly two rounds', async () => {
+        let result = await alexa.launch();
+        assert.include(result.prompt(), 'Welcome to Quizza');
+        result = await alexa.utter('start game');
+        assert.include(result.prompt(), 'first round');
+      })
     });
