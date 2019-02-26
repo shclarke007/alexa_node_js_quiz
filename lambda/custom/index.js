@@ -89,6 +89,7 @@ const AnswerIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
+      .reprompt('Are you ready yet?')
       .withShouldEndSession (false)
       .getResponse()
   },
