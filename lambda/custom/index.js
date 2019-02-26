@@ -1,7 +1,7 @@
 const Alexa = require('ask-sdk-core')
 const questions = require('./questions.js')
 
-const welcomeMessage = 'Welcome to Quizza. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?'
+const welcomeMessage = 'Welcome to Britain\'s got trivia. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?'
 const goodbyeMessage = 'Goodbye. Thanks for playing.'
 const readyMessage = 'Ok. Here are the rules. I will ask you five questions in round one. For every correct answer you will get one point added to your score. You can pass if you do not know the answer. No point will be awarded for incorrect answers or passed questions. Say start game to hear your first question. When ready to answer just say the answer'
 const readyReprompt = 'Say start to hear your first question. When ready to answer just say the answer'
@@ -21,7 +21,7 @@ const LaunchRequestHandler = {
 }
 
 const ReadyIntentHandler = {
-  canHandle(handlerInput) {
+  canHandle(handlerInput) { 
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
       && handlerInput.requestEnvelope.request.intent.name === 'ReadyIntent'
   },
@@ -60,18 +60,18 @@ const StartQuizIntentHandler = {
     sessionAttributes.answer = currentAnswer
     sessionAttributes.score = 0 
    
-    // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
-    if(process.env.NODE_ENV === 'test') {
-      sessionAttributes.question = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
-      sessionAttributes.answer = 'a'
-    }
+      // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
+      if(process.env.NODE_ENV === 'test') {
+       currentQuestion = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+        sessionAttributes.answer = 'a'
+      }
 
     return handlerInput.responseBuilder
       .speak(`${currentQuestion} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
       .reprompt(currentQuestion)
       .withShouldEndSession (false)
       .getResponse()
-  },
+  }
 }
 
 const AnswerIntentHandler = {
@@ -112,7 +112,7 @@ function determine_correct(answer_slot, session_attribute, handlerInput) {
         sessionAttributes.score ++
       return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01\'/> correct. One point has been added to your score. '
     } else {
-      return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01\'/> sorry, that is wrong. '  
+      return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01\'/> sorry, that is incorrect.'  
     }
 }
 
@@ -143,6 +143,12 @@ function getNextQuestion(handlerInput) {
     sessionAttributes.question = currentQuestion
     var currentAnswer = currentQuestionObject.answer
     sessionAttributes.answer = currentAnswer
+
+    // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
+    if(process.env.NODE_ENV === 'test') {
+      currentQuestion = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+      sessionAttributes.answer = 'a'
+    }
    
    if(sessionAttributes.allQuestions.length > 0) {
     return `The next question is: ${currentQuestion}`

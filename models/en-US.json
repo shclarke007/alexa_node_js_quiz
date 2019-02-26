@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "quizz world",
+            "invocationName": "britain's got trivia",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -79,26 +79,6 @@
                     "name": "AnswerIntent",
                     "slots": [
                         {
-                            "name": "month",
-                            "type": "AMAZON.Month"
-                        },
-                        {
-                            "name": "person",
-                            "type": "PersonType"
-                        },
-                        {
-                            "name": "country",
-                            "type": "UKCountryType"
-                        },
-                        {
-                            "name": "city",
-                            "type": "AMAZON.GB_CITY"
-                        },
-                        {
-                            "name": "flower",
-                            "type": "FlowerType"
-                        },
-                        {
                             "name": "answer",
                             "type": "CustomSlotType"
                         }
@@ -107,12 +87,7 @@
                         "the answer is {answer}",
                         "it's {answer}",
                         "that is {answer}",
-                        "{answer}",
-                        "{flower}",
-                        "{city}",
-                        "{country}",
-                        "{person}",
-                        "{month}"
+                        "{answer}"
                     ]
                 },
                 {
@@ -158,26 +133,6 @@
             ],
             "types": [
                 {
-                    "name": "AMAZON.GB_CITY",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "london city"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "city of London"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "london"
-                            }
-                        }
-                    ]
-                },
-                {
                     "name": "ReadyType",
                     "values": [
                         {
@@ -213,73 +168,8 @@
                     ]
                 },
                 {
-                    "name": "PersonType",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "elizabeth"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "philip"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "UKCountryType",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "wales"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "scotland"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "northern ireland"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "england"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "FlowerType",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "Shamrock"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "Poppy"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "Rose"
-                            }
-                        }
-                    ]
-                },
-                {
                     "name": "CustomSlotType",
                     "values": [
-                        {
-                            "name": {
-                                "value": "d"
-                            }
-                        },
                         {
                             "name": {
                                 "value": "c"
@@ -301,3 +191,4 @@
         }
     }
 }
+    
