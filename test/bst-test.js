@@ -44,7 +44,7 @@ const alexa = va.VirtualAlexa.Builder()
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
 
-        result = await alexa.utter("the answer is d")
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is wrong");
       })
 
@@ -56,16 +56,16 @@ const alexa = va.VirtualAlexa.Builder()
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
 
-        result = await alexa.utter("the answer is d")
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is wrong");
 
-        result = await alexa.utter("the answer is d")
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is wrong");
 
-        result = await alexa.utter("the answer is d")
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is wrong");
 
-        result = await alexa.utter("the answer is d")
+        result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "You scored 0");
 
       })
