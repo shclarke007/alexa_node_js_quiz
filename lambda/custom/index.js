@@ -113,7 +113,7 @@ function determine_correct(answer_slot, session_attribute, handlerInput) {
         sessionAttributes.score ++
       return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01\'/> correct. One point has been added to your score. '
     } else {
-      return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01\'/> sorry, that is wrong. '  
+      return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01\'/> sorry, that is incorrect.'  
     }
 }
 
