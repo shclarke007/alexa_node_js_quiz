@@ -1,7 +1,7 @@
 const Alexa = require('ask-sdk-core')
 const questions = require('./questions')
 
-const welcomeMessage = 'Welcome to Quizza. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?'
+const welcomeMessage = `Welcome to Britain's got trivia. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?`
 const goodbyeMessage = 'Goodbye. Thanks for playing.'
 const readyMessage = 'Ok. Here are the rules. I will ask you five questions in round one. For every correct answer you will get one point added to your score. You can pass if you do not know the answer. No point will be awarded for incorrect answers or passed questions. Say start game to hear your first question. When ready to answer just say the answer'
 const readyReprompt = 'Say start to hear your first question. When ready to answer just say the answer'
@@ -62,7 +62,7 @@ const StartQuizIntentHandler = {
    
       // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
       if(process.env.NODE_ENV === 'test') {
-        sessionAttributes.question = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+        currentQuestion = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
         sessionAttributes.answer = 'a'
       }
 
@@ -144,6 +144,12 @@ function getNextQuestion(handlerInput) {
     sessionAttributes.question = currentQuestion
     var currentAnswer = currentQuestionObject.answer
     sessionAttributes.answer = currentAnswer
+
+    // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
+    if(process.env.NODE_ENV === 'test') {
+      currentQuestion = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+      sessionAttributes.answer = 'a'
+    }
    
    if(sessionAttributes.allQuestions.length > 0) {
     return `The next question is: ${currentQuestion}`

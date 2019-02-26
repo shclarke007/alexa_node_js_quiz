@@ -10,12 +10,12 @@ const alexa = va.VirtualAlexa.Builder()
     describe('Britains Got Trivia tests', function() {
       it('can open launch intent', async () => {
         let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
+        assert.include(result.prompt(), `Welcome to Britain's got trivia`);
       });
 
       it('StopIntent', async () => {
         let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
+        assert.include(result.prompt(), `Welcome to Britain's got trivia`);
 
         result = await alexa.utter('stop');
         assert.include(result.prompt(), 'Goodbye.');
@@ -23,7 +23,7 @@ const alexa = va.VirtualAlexa.Builder()
 
       it('ReadyIntent say no', async () => {
         let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
+        assert.include(result.prompt(), `Welcome to Britain's got trivia`);
 
         result = await alexa.utter('no');
         assert.include(result.prompt(), 'Hurry up');
@@ -31,7 +31,7 @@ const alexa = va.VirtualAlexa.Builder()
 
       it('Start Game', async () => {
         let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
+        assert.include(result.prompt(), `Welcome to Britain's got trivia`);
 
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
@@ -39,7 +39,7 @@ const alexa = va.VirtualAlexa.Builder()
 
       it("Answer question incorrectly", async () => {
         let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
+        assert.include(result.prompt(), `Welcome to Britain's got trivia`);
 
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
@@ -51,28 +51,22 @@ const alexa = va.VirtualAlexa.Builder()
       
       it("Shows your score after 5 questions", async () => {
         let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
-
+        assert.include(result.prompt(), `Welcome to Britain's got trivia`);
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
-
         result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is incorrect");
-
         result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is incorrect");
-
         result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "sorry, that is incorrect");
-
         result = await alexa.utter("the answer is b")
         assert.include(result.prompt(), "You scored 0");
-
       })
 
       it("Answer question correctly", async () => {
         let result = await alexa.launch();
-        assert.include(result.prompt(), 'Welcome to Quizza');
+        assert.include(result.prompt(), `Welcome to Britain's got trivia`);
 
         result = await alexa.utter('start game');
         assert.include(result.prompt(), 'A,');
@@ -83,7 +77,7 @@ const alexa = va.VirtualAlexa.Builder()
 
       // it('ReadyIntent say yes', async () => {
       //   let result = await alexa.launch();
-      //   assert.include(result.prompt(), 'Welcome to Quizza');
+      //   assert.include(result.prompt(), `Welcome to Britain's got trivia`);
 
       //   result = await alexa.utter('yes');
       //   assert.include(result.prompt(), 'london');

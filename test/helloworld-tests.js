@@ -7,7 +7,7 @@ alexaTest.initialize(
 
 	
 
-describe('Quizza Skill', function () {
+describe('BGT Skill', function () {
 	//tests the locale of the framework can change
 	describe('locale', function (){
 		alexaTest.setLocale('en-GB')
@@ -19,7 +19,7 @@ describe('Quizza Skill', function () {
 		alexaTest.test([
 			{
 				request: alexaTest.getLaunchRequest(),
-				says:  "<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01'/> Welcome to Quizza. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?",
+				saysLike:  `<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01'/> Welcome to Britain's got trivia`,
 				repromptsNothing: false, shouldEndSession: false
 			}
 		]);
@@ -51,7 +51,7 @@ describe('Quizza Skill', function () {
 		alexaTest.test([
 			{
 				request: alexaTest.getLaunchRequest(),
-				saysLike:  "<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01'/> Welcome to Quizza. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?", repromptsNothing: false, shouldEndSession: false
+				saysLike:  `<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01'/> Welcome to Britain's got trivia`, repromptsNothing: false, shouldEndSession: false
 			}
 		]);
 	});
@@ -60,7 +60,7 @@ describe('Quizza Skill', function () {
 		alexaTest.test([
 			{ 
 				request: alexaTest.getIntentRequest("AMAZON.StartOverIntent"),
-				 says:  "<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01'/> Welcome to Quizza. A game with questions based on the popular life in the UK test. Are you ready to find out if you are truly British?", shouldEndSession: false 
+				 saysLike:  `<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01'/> Welcome to Britain's got trivia`, shouldEndSession: false 
 			},
 			{ 
 				request: alexaTest.getIntentRequest("AMAZON.StopIntent"), 
