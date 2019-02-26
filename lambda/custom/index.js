@@ -69,7 +69,7 @@ const StartQuizIntentHandler = {
     }
 
     return handlerInput.responseBuilder
-      .speak(`This is round ${sessionAttributes.current_round}. ${currentQuestion} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
+      .speak(`This is round ${sessionAttributes.current_round}. ${sessionAttributes.question} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
       .reprompt(currentQuestion)
       .withShouldEndSession (false)
       .getResponse()
@@ -105,6 +105,7 @@ const StopIntentHandler = {
   handle(handlerInput) {
     return handlerInput.responseBuilder
     .speak(`<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_outro_01'/> ${goodbyeMessage}`)
+    .withShouldEndSession (true)
     .getResponse()
   }
 }
@@ -115,7 +116,7 @@ function determine_correct(answer_slot, session_attribute, handlerInput) {
         sessionAttributes.score ++
       return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01\'/> correct. One point has been added to your score. '
     } else {
-      return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01\'/> sorry, that is wrong. '  
+      return '<audio src=\'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01\'/> sorry, that is incorrect. '  
     }
 }
 
@@ -146,9 +147,12 @@ function getNextQuestion(handlerInput) {
     sessionAttributes.question = currentQuestion
     var currentAnswer = currentQuestionObject.answer
     sessionAttributes.answer = currentAnswer
-   
+    if(process.env.NODE_ENV === 'test') {
+      sessionAttributes.question = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+      sessionAttributes.answer = 'a'
+    }
    if(sessionAttributes.allQuestions.length > 0) {
-    return `The next question is: ${currentQuestion}`
+    return `The next question is: ${sessionAttributes.question}`
    } else {
      if(sessionAttributes.current_round === sessionAttributes.total_rounds) {
       return `You scored ${sessionAttributes.score}. Thank you for playing`
