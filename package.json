@@ -20,7 +20,8 @@
   "devDependencies": {
     "alexa-skill-test-framework": "^1.2.4",
     "eslint": "^5.14.1",
-    "mocha": "^6.0.1",
-    "nyc": "^13.3.0"
+    "mocha": "^6.0.0",
+    "nyc": "^13.3.0",
+    "virtual-alexa": "^0.6.14"
   }
 }

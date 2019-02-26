@@ -60,6 +60,12 @@ const StartQuizIntentHandler = {
     sessionAttributes.answer = currentAnswer
     sessionAttributes.score = 0 
    
+    // For testing purposes, force a question to be picked if the UNIT_TEST environment variable is set
+    if(process.env.NODE_ENV === 'test') {
+      sessionAttributes.question = 'What is the capital of England? Is it, A, London. B, Edinburgh. C, Cardiff?'
+      sessionAttributes.answer = 'a'
+    }
+
     return handlerInput.responseBuilder
       .speak(`${currentQuestion} <audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01'/>`)
       .reprompt(currentQuestion)
@@ -85,8 +91,6 @@ const AnswerIntentHandler = {
       .speak(speechText)
       .withShouldEndSession (false)
       .getResponse()
-      
-    
   },
 }
 
