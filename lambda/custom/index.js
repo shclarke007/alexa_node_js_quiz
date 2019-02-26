@@ -105,6 +105,7 @@ const StopIntentHandler = {
   handle(handlerInput) {
     return handlerInput.responseBuilder
     .speak(`<audio src='soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_outro_01'/> ${goodbyeMessage}`)
+    .withShouldEndSession (true)
     .getResponse()
   }
 }
